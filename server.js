@@ -1,14 +1,19 @@
-// Importez le module HTTP
-const http = require('http');
+// Importer le module Express
+const express = require('express');
+const path = require('path');
 
-// Créez un serveur HTTP de base
-const server = http.createServer((req, res) => {
-    // Renvoyez du texte en clair à l'utilisateur
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Bonjour ! Ceci est un serveur local en JavaScript.');
+// Créer une nouvelle application Express
+const app = express();
+
+// Définir le dossier public comme dossier statique
+app.use(express.static('public'));
+
+// Définir une route GET pour la racine ("/")
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Écoutez sur le port 3000
-server.listen(3000, () => {
-    console.log('Serveur en cours d\'écoute sur le port 3000...');
+// Démarrer le serveur sur le port 3000
+app.listen(3000, () => {
+  console.log('Le serveur est en écoute sur le port 3000');
 });
