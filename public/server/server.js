@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 // Définir une route GET pour la racine ("/")
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '..', '..', 'html', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'html', 'index.html'));
 });
 
 app.get('/morpion', function (req, res) {
