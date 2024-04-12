@@ -13,6 +13,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/morpion', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'morpion.html'));
+  });
+
 // Démarrer le serveur sur le port 3000
 app.listen(3000, () => {
   console.log('Le serveur est en écoute sur le port 3000');
