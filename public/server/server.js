@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 // Définir une route GET pour la racine ("/")
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', '..', 'html', 'index.html'));
 });
 
 app.get('/morpion', function (req, res) {
@@ -19,5 +19,5 @@ app.get('/morpion', function (req, res) {
 
 // Démarrer le serveur sur le port 3000
 app.listen(3000, () => {
-  console.log('Le serveur est en écoute sur le port 3000');
+  console.log('Le serveur est en écoute sur le port 3000 au port http://localhost:3000/');
 });
