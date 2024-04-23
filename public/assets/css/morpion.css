@@ -1,0 +1,30 @@
+body {
+    background-color: coral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+/* Exemple de style */
+button {
+    background-color: #24292e;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+  a {
+    background-color: #24292e;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  canvas {
+    background-color: aquamarine;
+  }
