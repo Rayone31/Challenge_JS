@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu de Morpion</title>
-    <style>
-        .cell {
-            height: 60px;
-            width: 60px;
-            border: 1px solid;
-            display: inline-block;
-            line-height: 60px;
-            text-align: center;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/morpion.css">
+    <title>Morpion</title>
 </head>
 <body>
-    <div id="morpion"></div>
-    <button id="reset">Réinitialiser</button>
-    <script src="morpion.js"></script>
+    <h1>Morpion 1vs1</h1>
+    <br>
+    <button id="btnJoueurContreJoueur">Joueur contre Joueur</button>
+    <br>
+    <button id="btnJoueurContreOrdinateur">Joueur contre Ordinateur</button>
+    <br>    
+    <canvas id="morpion" width="300" height="300"></canvas>
+    <p id="message"></p>
+    <button id="reset">Relancer la partie</button>
+    <br>
+    <a href="/">Menu</a>
+    <script src="../scripts/Game/Morpion/morpion.js"></script>
 </body>
 </html>
