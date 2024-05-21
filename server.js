@@ -25,6 +25,10 @@ app.get('/morpion', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'html', 'morpion.html'));
 });
 
+app.get('/VMT', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'html', 'VMT.html'));
+});
+
 // Démarrer le serveur sur le port 3000
 app.listen(3000, () => {
   console.log('Le serveur est en écoute sur le port 3000 au port http://localhost:3000/');

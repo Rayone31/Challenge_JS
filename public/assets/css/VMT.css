@@ -1,0 +1,7 @@
+#damier {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 360px;
+    height: 360px;
+    margin: 10px auto;
+}
