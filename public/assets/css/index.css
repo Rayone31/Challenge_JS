@@ -1,0 +1,9 @@
+body {
+    background-image: url("../images/index/arcade entiers.jpg"); 
+}
+
+canvas {
+    display: block;
+    margin: 190px auto 0; 
+    border: 10px solid #e0dfdf;  
+}

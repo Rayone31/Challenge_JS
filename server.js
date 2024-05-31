@@ -27,7 +27,6 @@ app.get('/cdf/data', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'data', 'cdf.json'));
 });
 
-
 // Démarrer le serveur sur le port 3000
 app.listen(3000, () => {
   console.log('Le serveur est en écoute sur le port 3000 au port http://localhost:3000/');
