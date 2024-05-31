@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CSS pour un en-tête */
 h1 {
     color: #333333;
@@ -24,3 +25,14 @@ a {
     text-decoration: none;
     margin-top: 20px;
 }
+=======
+body {
+    background-image: url("../images/index/arcade entiers.jpg"); 
+}
+
+canvas {
+    display: block;
+    margin: 190px auto 0; 
+    border: 10px solid #e0dfdf;  
+}
+>>>>>>> dylan

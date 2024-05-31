@@ -1,15 +1,24 @@
+@font-face {
+    font-family: "Pixel";
+    src: url(../css/AwfullyDigital.woff) format("woff");
+}
+
 canvas {
     display: block;
-    margin: 0 auto;
-    border: 1px solid #000;
+    margin: 270px auto 0; 
+    border: 10px solid black;
+    background-image: url('../images/snake/rock.jpeg');
+   
 }
 
 
 #score {
-    font-size: 20px;
-    color: #000;
-    font-family: Arial, sans-serif;
-    margin-top: 10px;
+    font-size: 250%;
+    color: #d5ff01;
+    font-family: "Pixel";
+    position: absolute;
+    bottom: 640px;
+    right: 850px;
 }
 
 button {
@@ -26,5 +35,9 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+body {
+    background-image: url("../images/index/arcade entiers.jpg"); 
 }
 

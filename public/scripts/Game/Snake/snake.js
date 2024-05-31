@@ -1,3 +1,5 @@
+
+
 // Récupération du canvas et du contexte de dessin
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
@@ -20,18 +22,69 @@ const pixelSize = 20;
 // Chargement de l'image
 const appleImage = new Image();
 appleImage.src = '../assets/images/snake/apple.jpeg';
+appleImage.onload = function() {
+
+};
 
 const headSnakeImageUp = new Image();
 headSnakeImageUp.src = '../assets/images/snake/head_snake_haut.jpeg';
+headSnakeImageUp.onload = function() {
+    // L'image est maintenant chargée
+};
 
 const headSnakeImageDown = new Image();
 headSnakeImageDown.src = '../assets/images/snake/head_snake_bas.jpeg';
+headSnakeImageDown.onload = function() {
+    // L'image est maintenant chargée
+};
 
 const headSnakeImageLeft = new Image();
 headSnakeImageLeft.src = '../assets/images/snake/head_snake_gauche.jpeg';
-
+headSnakeImageLeft.onload = function() {
+    // L'image est maintenant chargée
+};
 const headSnakeImageRight = new Image();
 headSnakeImageRight.src = '../assets/images/snake/head_snake_droite.jpeg';
+headSnakeImageRight.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagehautbas = new Image();
+bodySnakeImagehautbas.src = '../assets/images/snake/body_snake_haut_bas.jpeg';
+bodySnakeImagehautbas.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagegauchedroite = new Image();
+bodySnakeImagegauchedroite.src = '../assets/images/snake/body_snake_gauche_droite.jpeg';
+bodySnakeImagegauchedroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagehautgauche = new Image();
+bodySnakeImagehautgauche.src = '../assets/images/snake/body_snake_haut_gauche.jpeg';
+bodySnakeImagehautgauche.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagehautdroite = new Image();
+bodySnakeImagehautdroite.src = '../assets/images/snake/body_snake_haut_droite.jpeg';
+bodySnakeImagehautdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagebasgauche = new Image();
+bodySnakeImagebasgauche.src = '../assets/images/snake/body_snake_bas_gauche.jpeg';
+bodySnakeImagebasgauche.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const bodySnakeImagebasdroite = new Image();
+bodySnakeImagebasdroite.src = '../assets/images/snake/body_snake_bas_droite.jpeg';
+bodySnakeImagebasdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
 
 // Initialisation de la nourriture
 let food = null;
@@ -41,7 +94,7 @@ let score = 0;
 let speed = 200;
 
 // Variable pour gérer la pause
-let isPaused = false;
+let isPaused = true;
 
 // Dessin du serpent
 function drawSnake(){
@@ -66,8 +119,28 @@ function drawSnake(){
             ctx.drawImage(headImage, part.x, part.y, pixelSize, pixelSize);
         } else {
             // Dessin du corps du serpent
-            ctx.fillStyle = 'green';
-            ctx.fillRect(part.x, part.y, pixelSize, pixelSize);
+            let bodyImage;
+            const prevPart = snake[index - 1];
+            const nextPart = snake[index + 1];
+
+            if (prevPart && nextPart) {
+                if (prevPart.y === nextPart.y) {
+                    bodyImage = bodySnakeImagegauchedroite;
+                } else if (prevPart.x === nextPart.x) {
+                    bodyImage = bodySnakeImagehautbas;
+                } else if ((prevPart.x < part.x && nextPart.y < part.y) || (nextPart.x < part.x && prevPart.y < part.y)) {
+                    bodyImage = bodySnakeImagehautgauche;
+                } else if ((prevPart.x > part.x && nextPart.y < part.y) || (nextPart.x > part.x && prevPart.y < part.y)) {
+                    bodyImage = bodySnakeImagehautdroite;
+                } else if ((prevPart.x < part.x && nextPart.y > part.y) || (nextPart.x < part.x && prevPart.y > part.y)) {
+                    bodyImage = bodySnakeImagebasgauche;
+                } else if ((prevPart.x > part.x && nextPart.y > part.y) || (nextPart.x > part.x && prevPart.y > part.y)) {
+                    bodyImage = bodySnakeImagebasdroite;
+                }
+            }
+            if (bodyImage) {
+                ctx.drawImage(bodyImage, part.x, part.y, pixelSize, pixelSize);
+            }
         }
     });
 }
@@ -122,7 +195,7 @@ function updateScore(){
 
 // Dessin de la nourriture
 function drawFood(){
-    ctx.drawImage(appleImage, food.x, food.y, pixelSize, pixelSize);
+    ctx.drawImage(appleImage, food.x, food.y, pixelSize * 1.25, pixelSize * 1.25);
 }
 
 // Création d'un nombre aléatoire pour la position de la nourriture
@@ -179,11 +252,32 @@ function gameLoop(){
     }
     setTimeout(gameLoop, speed);
 }
-gameLoop();
+
+// Message de démarrage
+function drawStartMessage() {
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'Yellow';
+    ctx.fillText('Appuyez sur Espace pour commencer', canvas.width / 2, canvas.height / 2);
+}
 
 // Gestion de la pause avec la touche espace
 document.addEventListener('keydown', function(event) {
     if (event.keyCode === 32) { 
         isPaused = !isPaused;
+        if (!isPaused) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
     }
 });
+
+// Démarrage du jeu avec la touche Entrée
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) { 
+        isPaused = false;
+    }
+});
+
+drawStartMessage();
+gameLoop();
