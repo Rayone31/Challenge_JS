@@ -1,9 +1,13 @@
 body {
     background-image: url("../images/index/arcade entiers.jpg"); 
+    background-size: 97%;
+    overflow: hidden;
 }
 
 canvas {
     display: block;
     margin: 190px auto 0; 
+    margin-left: 30%;
+    margin-top: 11%;
     border: 10px solid #e0dfdf;  
 }

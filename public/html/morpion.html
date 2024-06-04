@@ -7,17 +7,22 @@
     <title>Morpion</title>
 </head>
 <body>
-    <h1>Morpion 1vs1</h1>
-    <br>
-    <button id="btnJoueurContreJoueur">Joueur contre Joueur</button>
-    <br>
-    <button id="btnJoueurContreOrdinateur">Joueur contre Ordinateur</button>
-    <br>    
+    
+    <div id="buttonContainer">
+        <button id="btnJoueurContreJoueur">JcJ</button>
+        <button id="btnJoueurContreOrdinateur">JcO</button>
+    </div>
+
     <canvas id="morpion" width="300" height="300"></canvas>
+    
+
+    <div id ="buttonContainer2">  
+        <button id="reset">Reset</button>
+        <a href="/">Menu</a>
+    </div>
+
     <p id="message"></p>
-    <button id="reset">Relancer la partie</button>
-    <br>
-    <a href="/">Menu</a>
+
     <script src="../scripts/Game/Morpion/morpion.js"></script>
 </body>
 </html>

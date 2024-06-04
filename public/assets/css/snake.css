@@ -6,9 +6,10 @@
 canvas {
     display: block;
     margin: 270px auto 0; 
+    margin-top: 13%;
+    margin-right: 28%;
     border: 10px solid black;
     background-image: url('../images/snake/rock.jpeg');
-   
 }
 
 
@@ -17,8 +18,8 @@ canvas {
     color: #d5ff01;
     font-family: "Pixel";
     position: absolute;
-    bottom: 640px;
-    right: 850px;
+    bottom: 500px;
+    right: 675px;
 }
 
 button {
@@ -39,5 +40,7 @@ button:hover {
 
 body {
     background-image: url("../images/index/arcade entiers.jpg"); 
+    background-size: 97%;
+    overflow: hidden; 
 }
 

@@ -1,30 +1,104 @@
+@font-face {
+  font-family: "Pixel";
+  src: url(../css/AwfullyDigital.woff) format("woff");
+}
+
 body {
-    background-color: coral;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* Change from column to row */
+  background-image: url("../images/index/arcade entiers.jpg"); 
+  background-size: 97%;
+  overflow: hidden; 
 }
 
-/* Exemple de style */
-button {
-    background-color: #24292e;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-
-  a {
-    background-color: #24292e;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-  }
+/*button {
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-left: auto; /* Add this line 
+}*/
   
-  canvas {
-    background-color: aquamarine;
-  }
+canvas {
+  background-color: rgb(43, 2, 180);
+  width: 20%; 
+  height: 20%;
+  margin-top: 15%; 
+  margin-left: 10%;
+}
+
+#buttonContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 950px; 
+  top: 45%;
+}
+
+#btnJoueurContreJoueur {
+  font-family: "Pixel";
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  margin-bottom: 50px;
+}
+
+#btnJoueurContreOrdinateur {
+  font-family: "Pixel";
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+#buttonContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-left: 50px; 
+  margin-top: 15%;
+}
+
+a {
+  font-family: "Pixel";
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#reset {
+  font-family: "Pixel";
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+#btnJoueurContreJoueur, #btnJoueurContreOrdinateur, #reset , a{
+  font-family: "Pixel";
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 12px; 
+}
+
+#btnJoueurContreJoueur {
+  margin-bottom: 50px;
+}
+
+p {
+  font-family: "Pixel";
+  color: #b8c619;
+  font-size: 20px;
+  margin-left: 50px;
+  position: absolute;
+  top: 23%; 
+  left: 42%; 
+}
