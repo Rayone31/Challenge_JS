@@ -8,19 +8,20 @@
 </head>
 <body>
 
-<p id="score">Score : 0</p>
+<div id="stat">
+    <p id="score">Score : 0</p>
+    <p id="precision">Précision : 0%</p>
+    <p id="timer"> </p>
+</div>
 
-<p id="precision">Précision : 0%</p>
+<canvas id="canvas" width="580" height="298"></canvas>
 
-<p id="timer"> </p>
-
-<canvas id="canvas" width="750" height="550"></canvas>
-
-<input id="userInput" type="text" />
-
-<button id="start" disabled>Start</button>
-
-<button id="reset">Reset</button>
+<div id="boutton-container">
+    <input id="userInput" type="text" />
+    <button id="start" disabled>Start</button>
+    <button id="reset">Reset</button>
+    <a href="/">Menu</a>
+</div>
 
 
 <script src="../scripts/Game/Calculateur de frappe/cdf.js"></script>

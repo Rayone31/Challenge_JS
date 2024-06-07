@@ -1,0 +1,29 @@
+#damier {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 360px; 
+    height: 360px; 
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    height: 35%;
+    width: 35%;
+    top: 80%; 
+    left: 32%;
+    position: absolute; 
+}
+
+body {
+    background-image: url("../images/index/arcade entiers.jpg"); 
+    background-size: 97%;
+    overflow: hidden;
+}

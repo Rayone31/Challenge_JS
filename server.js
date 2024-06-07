@@ -18,11 +18,12 @@ app.get('/tri', function (req, res) {
 app.get('/morpion', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'html', 'morpion.html'));
 });
-
+app.get('/VMT', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'VMT.html'));
+});
 app.get('/cdf', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'html', 'cdf.html'));
 });
-
 app.get('/cdf/data', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'data', 'cdf.json'));
 });

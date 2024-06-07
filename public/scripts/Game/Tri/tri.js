@@ -9,7 +9,7 @@ let stop = false;
 const random = () => Math.floor(Math.random() * 100);
 
 // Fonction pour dessiner un nombre à une position spécifiée sur le canvas
-const drawNumber = (number, x, y, color = 'black') => {
+const drawNumber = (number, x, y, color = 'yellow') => {
     ctx.fillStyle = color;
     ctx.font = '20px Arial';
     ctx.fillText(number, x, y);
@@ -23,7 +23,7 @@ const drawNumber = (number, x, y, color = 'black') => {
 // Fonction pour effacer le canvas et dessiner tous les nombres dans le tableau donné
 const drawNumbers = (numbers, currentIndex = -1) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    numbers.forEach((number, i) => drawNumber(number, 50 + i * 50, 300, i === currentIndex ? 'red' : 'black'));
+    numbers.forEach((number, i) => drawNumber(number, 50 + i * 50, 300, i === currentIndex ? 'red' : 'yellow'));
 }
 
 // Création d'un tableau de 15 nombres aléatoires
