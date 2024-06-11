@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Pixel";
+    src: url(../css/AwfullyDigital.woff) format("woff");
+}
+
 #damier {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5,21 +10,9 @@
     height: 360px; 
     margin: 0 auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 53%;
+    left: 51.5%;
     transform: translate(-50%, -50%);
-}
-
-
-
-canvas {
-    display: block;
-    margin: 0 auto;
-    height: 35%;
-    width: 35%;
-    top: 80%; 
-    left: 32%;
-    position: absolute; 
 }
 
 body {
@@ -27,3 +20,56 @@ body {
     background-size: 97%;
     overflow: hidden;
 }
+
+#buttons-container {
+    position: absolute;
+    right: 450px; 
+    bottom: 290px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#scorecontainer {
+    position: absolute;
+    top: 150px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    font-size: 24px;
+    font-family: "Pixel";
+}
+
+#levelDisplay {
+    font-family: "Pixel";
+    color: #b8c619;
+   
+}
+
+#livesDisplay {
+    font-family: "Pixel";
+    color: #b8c619;
+    
+}
+
+a {
+    font-family: "Pixel";
+    background-color: #24292e;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  #resetButton {
+    font-family: "Pixel";
+    background-color: #24292e;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+  }
