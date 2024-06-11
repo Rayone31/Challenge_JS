@@ -56,23 +56,23 @@ function draw() {
     ctx.lineWidth = 2;
     ctx.strokeRect(titleRectX, titleRectY, titleRectWidth, titleRectHeight);
 
-    let rightRectX = canvas.width - 360; // Assurez-vous que cela ne chevauche pas d'autres éléments
-    let rightRectY = 5; // Aligné avec le haut des autres éléments
-    let rightRectWidth = 350; // Largeur du rectangle
-    let rightRectHeight = canvas.height - 10; // Hauteur du rectangle
+    let rightRectX = canvas.width - 360; 
+    let rightRectY = 5;
+    let rightRectWidth = 350; 
+    let rightRectHeight = canvas.height - 10;
 
     // Définir la couleur et dessiner le rectangle
-    ctx.fillStyle = '#4D4D4D'; // Couleur de fond du rectangle
+    ctx.fillStyle = '#2F2E2E'; 
     ctx.fillRect(rightRectX, rightRectY, rightRectWidth, rightRectHeight);
-    drawRoundedRect(ctx, rightRectX, rightRectY, rightRectWidth, rightRectHeight, 10, '#4D4D4D', 'black');
+    drawRoundedRect(ctx, rightRectX, rightRectY, rightRectWidth, rightRectHeight, 10, '#2F2E2E', 'black');
 
-    let innerRectX = rightRectX + 20; // 20 pixels à l'intérieur du rectangle de droite
-    let innerRectY = rightRectY + 70; // Position Y inchangée
-    let innerRectWidth = rightRectWidth - 40; // Largeur inchangée
-    let innerRectHeight = 175; // Hauteur augmentée de 50 pixels
+    let innerRectX = rightRectX + 20; 
+    let innerRectY = rightRectY + 70; 
+    let innerRectWidth = rightRectWidth - 40;
+    let innerRectHeight = 175;
     
     // Définir la couleur et dessiner le rectangle intérieur
-    ctx.fillStyle = '#FFFFFF'; // Couleur de fond du rectangle intérieur
+    ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(innerRectX, innerRectY, innerRectWidth, innerRectHeight);
     
     // Optionnel : Ajouter un contour au rectangle intérieur
@@ -84,7 +84,7 @@ function draw() {
         ctx.drawImage(gameImages[selectedIndex], rightRectX + 20, rightRectY + 70, rightRectWidth - 40, 175);
     }
 
-    ctx.font = '23px "Press Start 2P"'; // Police style arcade
+    ctx.font = '23px "Press Start 2P"'; 
     ctx.fillStyle = 'white';
     ctx.fillText("Liste de jeu", titleRectX + 15, titleRectY + 28);
 
@@ -97,10 +97,11 @@ function draw() {
         let width = titleRectWidth - 10;
         let height = 40;
         let radius = 10; 
-
-        ctx.fillStyle = selectedIndex === index ? '#00FF00' : '#D3D3D3'; // Vert lime pour la sélection, gris clair sinon
+    
+        // Modifier ici pour assombrir les rectangles non sélectionnés
+        ctx.fillStyle = selectedIndex === index ? '#00FF00' : '#636363'; 
         drawRoundedRect(ctx, x, y, width, height, radius);
-
+    
         ctx.font = '19px "Press Start 2P"';
         ctx.fillStyle = selectedIndex === index ? '#000' : 'white';
         ctx.fillText(text, x + 5, y + 28); 
