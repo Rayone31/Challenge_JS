@@ -23,7 +23,7 @@ const pixelSize = 20;
 const appleImage = new Image();
 appleImage.src = '../assets/images/snake/apple.jpeg';
 appleImage.onload = function() {
-
+    // L'image est maintenant chargée
 };
 
 const headSnakeImageUp = new Image();
@@ -85,6 +85,30 @@ bodySnakeImagebasdroite.onload = function() {
     // L'image est maintenant chargée
 };
 
+const tailSnakeImageUp = new Image();
+tailSnakeImageUp.src = '../assets/images/snake/tail_snake_haut.jpeg';
+bodySnakeImagebasdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const tailSnakeImageDown = new Image();
+tailSnakeImageDown.src = '../assets/images/snake/tail_snake_bas.jpeg';
+bodySnakeImagebasdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const tailSnakeImageLeft = new Image();
+tailSnakeImageLeft.src = '../assets/images/snake/tail_snake_gauche.jpeg';
+bodySnakeImagebasdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
+const tailSnakeImageRight = new Image();
+tailSnakeImageRight.src = '../assets/images/snake/tail_snake_droite.jpeg';
+bodySnakeImagebasdroite.onload = function() {
+    // L'image est maintenant chargée
+};
+
 
 // Initialisation de la nourriture
 let food = null;
@@ -138,9 +162,29 @@ function drawSnake(){
                     bodyImage = bodySnakeImagebasdroite;
                 }
             }
+
             if (bodyImage) {
                 ctx.drawImage(bodyImage, part.x, part.y, pixelSize, pixelSize);
             }
+        }
+        
+        if (index === snake.length - 1) {
+            let tailImage;
+            switch(direction[part.direction]){
+                case 'Up':
+                    tailImage = tailSnakeImageUp;
+                    break;
+                case 'Down':
+                    tailImage = tailSnakeImageDown;
+                    break;
+                case 'Left':
+                    tailImage = tailSnakeImageLeft;
+                    break;
+                case 'Right':
+                    tailImage = tailSnakeImageRight;
+                    break;
+            }
+            ctx.drawImage(tailImage, part.x, part.y, pixelSize, pixelSize);
         }
     });
 }
@@ -220,7 +264,28 @@ createFood();
 // Gestion de l'ingestion de la nourriture
 function eatFood(){
     if(snake[0].x === food.x && snake[0].y === food.y){
-        snake.push({});
+        // Récupère la dernière partie du serpent
+        const tail = snake[snake.length - 1];
+        const newPart = {x: tail.x, y: tail.y, direction: tail.direction};
+
+        // Calcule la position de la nouvelle partie basée sur la direction
+        switch(direction[tail.direction]){
+            case 'Left':
+                newPart.x += pixelSize;
+                break;
+            case 'Up':
+                newPart.y += pixelSize;
+                break;
+            case 'Right':
+                newPart.x -= pixelSize;
+                break;
+            case 'Down':
+                newPart.y -= pixelSize;
+                break;
+        }
+
+        // Ajoute la nouvelle partie au serpent
+        snake.push(newPart);
         createFood();
         updateScore();
     }
