@@ -8,7 +8,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row; /* Change from column to row */
-  background-image: url("../images/index/arcade entiers.jpg"); 
   background-size: 97%;
   overflow: hidden; 
 }

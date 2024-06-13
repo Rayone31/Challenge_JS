@@ -1,13 +1,15 @@
-body {
-    background-image: url("../images/index/arcade entiers.jpg"); 
-    background-size: 97%;
-    overflow: hidden;
-}
-
 canvas {
     display: block;
     margin: 190px auto 0; 
     margin-left: 30%;
     margin-top: 11%;
     border: 10px solid #e0dfdf;  
+}
+
+button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }

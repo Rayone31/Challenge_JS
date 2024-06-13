@@ -27,11 +27,11 @@ canvas {
     width: 100%;
 }
 
-body {
+/*body {
     background-image: url("../images/index/arcade entiers.jpg"); 
     background-size: 97%;
     overflow: hidden;
-}
+}*/
 
 #boutton-container {
     position: absolute;
