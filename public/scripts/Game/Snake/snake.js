@@ -233,7 +233,7 @@ function updateScore(){
 
     // Augmentation de la vitesse tous les 5 points
     if (score % 5 === 0) {
-        speed = Math.max(50, speed - 10); // La vitesse minimale est de 50
+        speed = Math.max(50, speed - 10);
     }
 }
 

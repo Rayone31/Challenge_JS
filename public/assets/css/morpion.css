@@ -2,31 +2,13 @@
   font-family: "Pixel";
   src: url(../css/AwfullyDigital.woff) format("woff");
 }
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row; /* Change from column to row */
-  background-size: 97%;
-  overflow: hidden; 
-}
-
-/*button {
-  background-color: #24292e;
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-left: auto; /* Add this line 
-}*/
   
 canvas {
   background-color: rgb(43, 2, 180);
   width: 20%; 
   height: 20%;
   margin-top: 15%; 
-  margin-left: 10%;
+  margin-left: 40%;
 }
 
 #buttonContainer {
@@ -57,9 +39,14 @@ canvas {
 #buttonContainer2 {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  margin-left: 50px; 
-  margin-top: 15%;
+  align-items: center; 
+  justify-content: center; 
+  position: absolute; 
+  left: 67%; 
+  top: 50%; 
+  transform: translate(-50%, -50%); 
+  margin-left: 0; 
+  margin-top: 0; 
 }
 
 a {
@@ -100,4 +87,19 @@ p {
   position: absolute;
   top: 23%; 
   left: 42%; 
+}
+
+#muteButton {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

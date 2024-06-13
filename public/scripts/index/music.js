@@ -1,10 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('muteButton').addEventListener('click', function() {
-        var audio = document.getElementById('audio');
+    var muteButton = document.getElementById('muteButton');
+    var audio = document.getElementById('audio');
+    var isMuted = false; 
+
+    // Définir les motifs SVG pour les états muet et non muet
+    var svgMuted = `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6.21263L3.50316 2.73684L49.2632 48.4968L45.7874 52L19.1579 25.3705V39.6842C19.1579 42.2247 18.1487 44.6612 16.3523 46.4576C14.5559 48.254 12.1194 49.2632 9.57895 49.2632C7.03845 49.2632 4.60201 48.254 2.80561 46.4576C1.00921 44.6612 0 42.2247 0 39.6842C0 37.1437 1.00921 34.7073 2.80561 32.9109C4.60201 31.1145 7.03845 30.1053 9.57895 30.1053C11.0568 30.1053 12.4526 30.4337 13.6842 31.0358V19.8968L0 6.21263ZM52 0V34.2105C52 36.9474 50.8232 39.4653 48.9347 41.2168L35.4147 27.6968C37.1663 25.8084 39.6842 24.6316 42.4211 24.6316C43.8989 24.6316 45.2947 24.96 46.5263 25.5621V9.49684L22.36 14.6421L15.4905 7.77263L52 0Z" fill="black"/>
+        </svg>`;
+
+    var svgUnmuted = `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path xmlns="http://www.w3.org/2000/svg" d="M50.9042 0.369652C50.5626 0.181551 50.1662 0.0606886 49.7498 0.0176349C49.3334 -0.0254187 48.9096 0.0106478 48.5155 0.12268L48.5324 0.118348L17.3296 8.64972C16.8247 8.78852 16.3878 9.04385 16.0787 9.38083C15.7697 9.7178 15.6034 10.12 15.6028 10.5323V38.3492C14.0081 37.6791 12.22 37.3283 10.4028 37.3288C7.76562 37.247 5.19032 37.9696 3.24253 39.3394C1.29474 40.7092 0.129338 42.6152 0 44.6427V44.66C0.124269 46.6932 1.29004 48.6059 3.24252 49.9801C5.195 51.3542 7.77539 52.078 10.4197 51.9933H10.4C13.0372 52.0752 15.6097 51.3526 17.5575 49.9828C19.5053 48.613 20.6707 46.7069 20.8 44.6795V16.7521L46.8 9.76976V29.2091C45.2045 28.5409 43.4167 28.1908 41.6 28.1908H41.5972C38.9601 28.1084 36.3875 28.8309 34.44 30.2009C32.4925 31.5709 31.3279 33.4772 31.2 35.5047V35.522C31.3235 37.5554 32.4891 39.4685 34.4417 40.8427C36.3944 42.217 38.9752 42.9406 41.6197 42.8554H41.6L41.8958 42.8597C44.1694 42.8597 46.3779 42.2757 48.1707 41.2002C49.9635 40.1248 51.2379 38.6197 51.7915 36.9237L51.8056 36.8695C51.9314 36.6359 51.9974 36.3858 52 36.1329V2.00313C52.0004 1.68417 51.9014 1.36977 51.7112 1.08631C51.521 0.802846 51.2453 0.558579 50.907 0.373985L50.8986 0.369652H50.9042Z" fill="black"/>
+        </svg>`;
+
+    // Mettre à jour le motif SVG initial du bouton
+    muteButton.innerHTML = svgUnmuted;
+
+    muteButton.addEventListener('click', function() {
         if (!audio.paused) {
-            audio.muted = !audio.muted; 
+            audio.muted = !audio.muted;
+            muteButton.innerHTML = audio.muted ? svgMuted : svgUnmuted;
         } else {
-            audio.play(); 
+            audio.play();
+            muteButton.innerHTML = svgUnmuted;
         }
+        isMuted = audio.muted;
     });
 });
