@@ -136,10 +136,9 @@ function userClick() {
     let squareId = parseInt(this.id.replace('square', ''));
     if (!selectedSquares.includes(squareId)) {
         this.style.backgroundColor = 'red';
-        lives--; // Étape 2: Décrémenter les vies
+        lives--;
         updateLivesDisplay(); // Mettre à jour l'affichage des vies
         if (lives === 0) {
-            // Étape 3: Vérifier si le jeu doit se terminer
             alert('Désolé, vous avez perdu toutes vos vies. Cliquez sur le bouton "Réinitialiser" pour recommencer.');
             isGamePlayable = false;
         }

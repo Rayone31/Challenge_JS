@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mettre à jour le motif SVG initial du bouton
     muteButton.innerHTML = svgUnmuted;
 
+    // Ajouter un écouteur d'événements pour le bouton de sourdine
     muteButton.addEventListener('click', function() {
         if (!audio.paused) {
             audio.muted = !audio.muted;

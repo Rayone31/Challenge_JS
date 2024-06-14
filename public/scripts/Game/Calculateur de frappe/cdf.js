@@ -17,8 +17,6 @@ const canvas = document.getElementById('canvas');
     let totalTypedLetters = 0;
     let incorrectLetters = 0;
     
-
-    
     fetch('../data/cdf.json')
         .then(response => response.json())
         .then(data => {
@@ -26,6 +24,8 @@ const canvas = document.getElementById('canvas');
             start.disabled = false;
         });
 
+    
+    // Fonction pour envelopper le texte
     function wrapText(context, text, x, y, maxWidth, lineHeight, userInputValue) {
         var words = text.split(' ');
         var line = '';
@@ -56,7 +56,7 @@ const canvas = document.getElementById('canvas');
             y += lineHeight;
         }
     }
-
+    // Fonction pour colorer le texte en fonction de l'entrée utilisateur
     function colorText(context, line, x, y, userInputValue) {
         let totalLength = 0;
         for (let i = 0; i < line.length; i++) {
@@ -85,6 +85,7 @@ const canvas = document.getElementById('canvas');
         }
     }
 
+    // Ajout d'un écouteur d'événements pour le bouton "start"
     start.addEventListener('click', () => {
         if (!isStarted) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -125,6 +126,7 @@ const canvas = document.getElementById('canvas');
         }
     });
 
+    // Ajout d'un écouteur d'événements pour le bouton "reset"
     reset.addEventListener('click', () => {
         if (intervalId) {
             clearInterval(intervalId);
@@ -140,6 +142,7 @@ const canvas = document.getElementById('canvas');
         startTime = null; 
     });
 
+    // Ajout d'un écouteur d'événements pour le champ de texte
     userInput.addEventListener('input', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = '20px Arial';

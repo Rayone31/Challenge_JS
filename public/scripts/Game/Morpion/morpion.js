@@ -169,6 +169,7 @@ function mouvementOrdinateur() {
     }, 500);
 }
 
+// Fonction pour changer le mode de jeu
 function changerModeDeJeu(nouveauMode) {
     modeDeJeu = nouveauMode;
 }
